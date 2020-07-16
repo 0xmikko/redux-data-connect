@@ -1,6 +1,6 @@
 {
   "name": "redux-data-connect",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Helpers for async loading content",
   "author": "Mikael Lazarev",
   "main": "./lib/index.js",

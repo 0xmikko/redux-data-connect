@@ -7,4 +7,4 @@ import {Operation, OPERATION_PREFIX} from './';
 
 import {createDataLoaderDetailsReducer} from '../dataloader/details';
 
-export default createDataLoaderDetailsReducer<Operation>(OPERATION_PREFIX);
+export const operationReducer = createDataLoaderDetailsReducer<Operation>(OPERATION_PREFIX);

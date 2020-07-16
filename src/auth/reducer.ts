@@ -1,8 +1,3 @@
-/*
- * Buzzzchat - P2P Chat based on Bluzelle DB
- * Copyright (c) 2020. Mikhail Lazarev
- */
-
 import jwtDecode from "jwt-decode";
 import { AuthStateType, AuthActions, TokenDTO, } from "./index";
 
@@ -12,7 +7,7 @@ const initialState: AuthStateType = {
   status: "AUTH_STARTUP",
 };
 
-export default (
+export const authReducer = (
   state: AuthStateType = initialState,
   action: AuthActions
 ): AuthStateType => {

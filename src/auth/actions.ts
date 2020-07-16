@@ -61,38 +61,6 @@ export const refreshAccessToken = (
 //     ],
 //   });
 
-/*
-  Authenticate flow
-  @param endpoint
-  @param body
- */
-const authenticate = (
-  endpoint: string,
-  body: string
-): ThunkAction<void, DataConnectRootStateI, unknown, Action<string>> => async (
-  dispatch
-) => {
-  const result = await dispatch(
-    journaledOperation(
-      createAction({
-        endpoint,
-        method: "POST",
-        body,
-        headers: { "Content-Type": "application/json" },
-        types: [
-          "AUTH_LOGIN_REQUEST",
-          "AUTH_LOGIN_SUCCESS",
-          "AUTH_LOGIN_FAILURE",
-        ],
-      }),
-      "f"
-    )
-  );
-
-  if (!result.error) {
-    localStorage.setItem("token", (result.payload as TokenPayload).refresh);
-  }
-};
 
 export const logout = (): ThunkAction<
   void,
@@ -124,4 +92,37 @@ export const createGetTokenAtStartupAction = (endpoint: string) => {
       });
     }
   };
+};
+
+/*
+  Authenticate flow
+  @param endpoint
+  @param body
+ */
+const authenticate = (
+    endpoint: string,
+    body: string
+): ThunkAction<void, DataConnectRootStateI, unknown, Action<string>> => async (
+    dispatch
+) => {
+    const result = await dispatch(
+        journaledOperation(
+            createAction({
+                endpoint,
+                method: "POST",
+                body,
+                headers: { "Content-Type": "application/json" },
+                types: [
+                    "AUTH_LOGIN_REQUEST",
+                    "AUTH_LOGIN_SUCCESS",
+                    "AUTH_LOGIN_FAILURE",
+                ],
+            }),
+            "f"
+        )
+    );
+
+    if (!result.error) {
+        localStorage.setItem("token", (result.payload as TokenPayload).refresh);
+    }
 };

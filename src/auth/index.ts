@@ -3,8 +3,7 @@
  * Copyright (c) 2020. Mikhail Lazarev
  */
 
-import { DataConnectRootStateI } from '..';
-
+import { DataConnectRootStateI } from "..";
 
 export interface TokenDTO {
   token: string;
@@ -54,8 +53,8 @@ export interface AuthStateType {
   status: AuthStatus;
 }
 
-export function accessToken(state: DataConnectRootStateI) : string | undefined {
-    return state.auth?.access?.token;
+export function accessToken(state: DataConnectRootStateI): string | undefined {
+  return state.auth?.access?.token;
 }
 
 export function isAccessTokenExpired(state: DataConnectRootStateI) {
@@ -65,8 +64,8 @@ export function isAccessTokenExpired(state: DataConnectRootStateI) {
   return true;
 }
 
-export function refreshToken(state: DataConnectRootStateI) : string | undefined {
-    return state.auth?.refresh?.token;
+export function refreshToken(state: DataConnectRootStateI): string | undefined {
+  return state.auth?.refresh?.token;
 }
 
 export function isRefreshTokenExpired(state: DataConnectRootStateI): boolean {

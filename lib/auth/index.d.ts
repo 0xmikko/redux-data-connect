@@ -1,4 +1,4 @@
-import { DataConnectRootStateI } from '..';
+import { DataConnectRootStateI } from "..";
 export interface TokenDTO {
     token: string;
     user_id: string;

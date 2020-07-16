@@ -1,3 +1,2 @@
 import { AuthStateType, AuthActions } from "./index";
-declare const _default: (state: AuthStateType | undefined, action: AuthActions) => AuthStateType;
-export default _default;
+export declare const authReducer: (state: AuthStateType | undefined, action: AuthActions) => AuthStateType;
